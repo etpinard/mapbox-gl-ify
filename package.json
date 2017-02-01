@@ -42,5 +42,11 @@
     "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls",
     "version": "npm run dist && npm run dist:min && git add dist.js dist.min.js",
     "postversion": "git push"
+  },
+  "standard": {
+    "ignore": [
+      "dist.js",
+      "dist.min.js"
+    ]
   }
 }
