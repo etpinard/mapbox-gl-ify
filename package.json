@@ -1,0 +1,46 @@
+{
+  "name": "mapbox-gl-ify",
+  "version": "1.0.0",
+  "description": "Utility that adds mapbox-gl meta data and CSS link for you",
+  "main": "index.js",
+  "bin": "bin.js",
+  "browser": "browser.js",
+  "author": "Étienne Tétreault-Pinard",
+  "license": "MIT",
+  "keywords": [
+    "mapbox-gl",
+    "indexhtmlify",
+    "browserify-transform"
+  ],
+  "dependencies": {
+    "falafel": "^2.0.0",
+    "hyperstream": "^1.2.2",
+    "pkg-up": "^1.0.0",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {
+    "browserify": "^14.0.0",
+    "coveralls": "^2.11.15",
+    "indexhtmlify": "^1.3.1",
+    "jsdom": "^9.9.1",
+    "mapbox-gl": "^0.32.1",
+    "metadataify": "^1.0.3",
+    "nyc": "^10.1.2",
+    "snazzy": "^6.0.0",
+    "standard": "^8.6.0",
+    "tap": "^10.0.0",
+    "uglify-js": "^2.7.5"
+  },
+  "scripts": {
+    "lint": "standard --fix | snazzy",
+    "test:lint": "standard | snazzy",
+    "test:js": "tap test/*_test.js",
+    "test": "npm run test:lint && npm run test:js",
+    "dist": "browserify browser.js > dist.js",
+    "dist:min": "browserify browser.js | uglifyjs > dist.min.js",
+    "cover": "nyc npm test",
+    "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls",
+    "version": "npm run dist && npm run dist:min && git add dist.js dist.min.js",
+    "postversion": "git push"
+  }
+}
