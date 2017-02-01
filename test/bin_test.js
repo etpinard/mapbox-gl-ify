@@ -1,8 +1,9 @@
 const test = require('tap').test
 const utils = require('./utils')
 const paths = utils.paths
+const opts = { timeout: 1e5 }
 
-test('CLI should work when piped from browserify + indexhtmlify', (t) => {
+test('CLI should work when piped from browserify + indexhtmlify', opts, (t) => {
   var cmd = `${paths.browserify} ${paths.fixture0} | ${paths.indexhtmlify} | ${paths.bin}`
 
   utils.exec(cmd, (err, stdout) => {
@@ -30,7 +31,7 @@ test('CLI should work when piped from browserify + indexhtmlify', (t) => {
   })
 })
 
-test('CLI should work when piped from browserify + indexhtmlify + metadataify', (t) => {
+test('CLI should work when piped from browserify + indexhtmlify + metadataify', opts, (t) => {
   var cmd = `${paths.browserify} ${paths.fixture1} | ${paths.indexhtmlify} | ${paths.metadataify} --title 'mapbox-gl-ify' | ${paths.bin}`
 
   utils.exec(cmd, (err, stdout) => {
