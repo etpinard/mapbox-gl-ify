@@ -76,7 +76,7 @@ var mapboxgl = require('mapbox-gl')
 for quick prototyping with `budo`:
 
 ```bash
-budo -t mapbox-gl-ify index.js
+budo index.js -- -t mapbox-gl-ify 
 ```
 
 or browserify:
