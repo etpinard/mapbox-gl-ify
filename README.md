@@ -67,7 +67,7 @@ npm install -g mapbox-gl-ify
 
 Given an `index.js` file with:
 
-```
+```js
 var mapboxgl = require('mapbox-gl')
 
 // !!! code goes here !!!
