@@ -43,8 +43,8 @@ But, if you like me to develop your prototypes using `budo` and build examples
 using `browserify`, including the correct `<meta>` and CSS `<link>` elements
 for `mapbox-gl` can become a pain. 
 
-By automating this process in, `mapbox-gl-ify` should make this process a
-little less painful.
+By automating this process, `mapbox-gl-ify` should make prototyping mapbox-gl 
+examples a little less painful.
 
 ## Installation 
 
